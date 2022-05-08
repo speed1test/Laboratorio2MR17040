@@ -6,18 +6,18 @@ import androidx.room.*
 @Dao
 interface JuegoDao {
     @Query("Select * from juego")
-    fun getAll():LiveData<List<AlumnoEntity>>
+    fun getAll():LiveData<List<JuegoEntity>>
 
-    /*@Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(alumno: AlumnoEntity)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insert(juego: JuegoEntity)
 
     @Update
-    suspend fun update(alumno: AlumnoEntity)
+    suspend fun update(juego: JuegoEntity)
 
     @Delete
-    suspend fun delete(alumno: AlumnoEntity)
+    suspend fun delete(juego: JuegoEntity)
 
-    @Query("Delete from alumno")
-    suspend fun deleteAll()*/
+    @Query("Delete from juego")
+    suspend fun deleteAll()
 
 }

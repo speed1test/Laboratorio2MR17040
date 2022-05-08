@@ -20,7 +20,7 @@ import androidx.room.ForeignKey.CASCADE
 data class NotaEntity(
     @ColumnInfo(name = "idJuego")
     val idJuego:Int,
-    @ColumnInfo(name="cantPartiPartida",defaultValue = "0")
+    @ColumnInfo(name="cantPartiPartida")
     val carnetAlumno:Int,
     @ColumnInfo(name = "ganadorPartida")
     val codigoMateria:String,

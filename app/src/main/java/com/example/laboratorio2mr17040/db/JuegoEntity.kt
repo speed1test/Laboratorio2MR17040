@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class JuegoEntity (
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "idJuego")
-    var id: Long = 0,
+    var id: Int,
 
     val nombre: String,
     val descripcion:String,
@@ -15,5 +15,5 @@ data class JuegoEntity (
     val cantMinJuego:Int,
     @ColumnInfo(name="cantMaxJugadores",defaultValue = "0")
     val cantMaxJuego:Int,
-    val categoriaJuego:Int
+    val categoriaJuego:String
 )
