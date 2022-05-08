@@ -2,13 +2,26 @@ package com.example.laboratorio2mr17040.db
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-@Entity(tableName = "partida")
-data class PartidaEntity (
-    @PrimaryKey
-    val carnet: String,
-    val nombre: String,
-    val apellido:String,
-    val sexo:Char,
-    @ColumnInfo(name="mat_ganadas",defaultValue = "0")
-    val matGanadas:Int
+import androidx.room.ForeignKey
+import androidx.room.ForeignKey.CASCADE
+
+@Entity(
+    tableName = "partida",
+    primaryKeys = ["idJuego"],
+    foreignKeys = [
+        ForeignKey(
+            entity = JuegoEntity::class,
+            parentColumns = ["idJuego"],
+            childColumns = ["idJuego"],
+            onDelete = CASCADE
+        )
+    ]
+)
+data class NotaEntity(
+    @ColumnInfo(name = "idJuego")
+    val idJuego:Int,
+    @ColumnInfo(name="cantPartiPartida",defaultValue = "0")
+    val carnetAlumno:Int,
+    @ColumnInfo(name = "ganadorPartida")
+    val codigoMateria:String,
 )

@@ -11,8 +11,9 @@ data class JuegoEntity (
 
     val nombre: String,
     val descripcion:String,
-    val cantMinJugadores:Int,
-    val cantMaxJugadores:Int,
-    @ColumnInfo(name="mat_ganadas",defaultValue = "0")
-    val matGanadas:Int
+    @ColumnInfo(name="cantMinJugadores",defaultValue = "0")
+    val cantMinJuego:Int,
+    @ColumnInfo(name="cantMaxJugadores",defaultValue = "0")
+    val cantMaxJuego:Int,
+    val categoriaJuego:Int
 )
